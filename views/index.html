@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Load Twitter Bootstrap from Codepen -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <title>Exercise Tracker</title>
+    <!-- <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon"/> -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+      <link href="style.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+
+          <h1 class="text-center customPadding">Exercise Tracker</h1>
+          <p class="customPadding">1) Create your username<br/>
+          2) Get your unique <code>_id</code> in a JSON response<br/>
+          3) Use the <code>_id</code> as your userId<br/>
+          4) Add your exercise to the database<br/></p>
+            <form action="/api/exercise/new-user" method="post">
+            <div class="form-group customForm">
+              
+              <h3>Create a New User</h3>
+              <p><code>POST /api/exercise/new-user</code></p>
+
+              <div class="form-group">
+                <label for="uname" class="col-form-label">Username*</label>
+                <input id="uname" class="form-control" type="text" name="username" placeholder="username">
+              </div>
+
+              <button class="btn btn-large btn-block">
+                <input type="submit" value="Submit">
+              </button>
+
+            </div>
+            </form>
+
+            <form action="/api/exercise/add" method="post">
+            <div class="form-group customForm">
+
+              <h3>Add Exercises</h3>
+              <p><code>POST /api/exercise/add</code></p>
+
+              <div class="form-group">
+                <label for="uid" class="col-form-label">userId*</label>
+                <input id="uid" class="form-control" type="text" name="userId" placeholder="userId">
+              </div>
+              <div class="form-group">
+                <label for="desc" class="col-form-label">Description*</label>
+                <input id="desc" class="form-control" type="text" name="description" placeholder="description">
+              </div>
+              <div class="form-group">
+                <label for="dur" class="col-form-label">Duration*</label>
+                <input id="dur" class="form-control" type="text" name="duration" placeholder="duration (mins.)">
+              </div>
+              <div class="form-group">
+                <label for="dat" class="col-form-label">Date</label>
+                <input id="dat" class="form-control" type="text" name="date" placeholder="date (yyyy-mm-dd)">
+              </div>
+
+              <button class="btn btn-large btn-block">
+                <input type="submit" value="Submit">
+              </button>
+
+            </div>
+            </form>
+
+            <div class="customPadding">
+              <p><strong>GET your exercise log: </strong><code>GET /api/exercise/log?{userId}[&amp;from][&amp;to][&amp;limit]</code></p>
+              <p><strong>{ }</strong> = required, <strong>[ ]</strong> = optional</p>
+              <p><strong>from, to</strong> = dates (yyyy-mm-dd); <strong>limit</strong> = number</p>
+              <p>Example: <code>https://exercise-tracker-project.jylee3.repl.co/api/exercise/log?userId=&lt;enter your _id&gt;</code></p>
+              <p>Filter results: <code>https://exercise-tracker-project.jylee3.repl.co/api/exercise/log?userId=&lt;enter your _id&gt;&from=2020-01-01&to=2020-12-30&limit=2</code></p>
+            </div>
+
+        </div>
+        <div class="col-md-2"></div>
+
+      </div>
+    </div>
+  </body>
+
+</html>

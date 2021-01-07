@@ -1,0 +1,11 @@
+.customPadding{
+  padding: 20px;
+}
+
+.customForm {
+  border: 1px  solid  #aaa;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  min-width: 400px;
+}
